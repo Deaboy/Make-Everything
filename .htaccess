@@ -1,0 +1,8 @@
+#Options +FollowSymLinks
+
+RewriteEngine On
+#RewriteRule ^([a-z][a-z](-[A-Z][A-Z])?)/(.*)$ $1?p=$3 [L]
+#RewriteRule /(.*)/?$ http://localhost/me/?p=$1 [L]
+#RewriteRule blog/?$ http://localhost/me/?p=blog [L]
+
+#ErrorDocument 404 /me/?p=404

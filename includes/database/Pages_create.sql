@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS `Pages` (
+	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Parent BIGINT DEFAULT NULL,
+    Type BIGINT,
+	Name VARCHAR(255) NOT NULL,
+	Title VARCHAR(255) NOT NULL,
+    
+    UNIQUE KEY ind_pages_parent_name
+        USING BTREE (Parent, Name),
+    
+    CONSTRAINT fk_pages_pages
+        FOREIGN KEY (Parent)
+        REFERENCES Pages(ID)
+        ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB;

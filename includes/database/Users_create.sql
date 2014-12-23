@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS `Users` (
+    ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Username VARCHAR(32) NOT NULL,
+    Password VARCHAR(256) NOT NULL,
+    Email VARCHAR(128) DEFAULT NULL,
+
+    UNIQUE KEY ind_users_username (Username)
+) Engine=InnoDB;
